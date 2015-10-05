@@ -3,21 +3,21 @@ require 'minitest/mock'
 
 class GamesTest < ActionDispatch::IntegrationTest
   test "new game returns the correct response code" do
-    skip
+
     post '/games', params: { difficulty: 0 }
 
     assert_response 201
   end
 
   test "new game returns the correct headers" do
-    skip
+
     post '/games', params: { difficulty: 0 }
 
     assert_match %r{application/json}, response.headers["Content-Type"]
   end
 
   test "new easy game returns the correct body" do
-    skip
+    
     post '/games', params: { difficulty: 0 }
 
     json = JSON.parse(response.body)
