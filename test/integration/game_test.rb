@@ -62,7 +62,7 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "checking a square" do
-    
+
     post '/games', params: {difficulty: 0}
     json = JSON.parse(response.body)
     board_id = json["id"]
@@ -84,7 +84,7 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "getting a board in play" do
-    skip
+
     post '/games', params: {difficulty: 0}
     json = JSON.parse(response.body)
     board_id = json["id"]
@@ -108,7 +108,7 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "flagging a square" do
-    skip
+
     post '/games', params: {difficulty: 0}
     json = JSON.parse(response.body)
     board_id = json["id"]
@@ -124,7 +124,7 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "winning" do
-    skip
+
     all_spaces = []
     8.times{ |row| 8.times { |col| all_spaces << [row,col] } }
 
@@ -155,7 +155,7 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "losing" do
-    skip
+    
     all_spaces = []
     8.times{ |row| 8.times { |col| all_spaces << [row,col] } }
 
